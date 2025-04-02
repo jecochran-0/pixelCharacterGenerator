@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
       '<div class="loading">Creating your pixel character...</div>';
 
     try {
-      const response = await fetch("/generate-character", {
+      const response = await fetch("/api/generate-character", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to download the image
   function downloadCharacter(imageUrl, filename) {
     // Create a link to our proxy endpoint
-    const proxyUrl = `/download-image?url=${encodeURIComponent(imageUrl)}`;
+    const proxyUrl = `/api/download-image?url=${encodeURIComponent(imageUrl)}`;
 
     // Create a download link
     const downloadLink = document.createElement("a");
