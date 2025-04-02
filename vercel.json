@@ -4,5 +4,11 @@
     { "handle": "filesystem" },
     { "src": "/api/(.*)", "dest": "/api/$1" },
     { "src": "/(.*)", "dest": "/$1" }
-  ]
+  ],
+  "functions": {
+    "api/generate-character.js": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  }
 }
