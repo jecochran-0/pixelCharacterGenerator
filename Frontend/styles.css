@@ -1,0 +1,474 @@
+body {
+    font-family: 'MedievalSharp', cursive;
+    /* Add medieval font for a quest-like feel */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    /* Ensure full viewport height */
+
+    /* Set position to relative */
+
+    /* Specify the path to your image file */
+    background-size: cover;
+    /* Cover the entire background */
+    background-position: center;
+    /* Center the background image */
+}
+
+.blur-background {
+    position: absolute;
+    /* Set position to absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Daytime.png');
+    /* Specify the path to your image file */
+    background-size: cover;
+    /* Cover the entire background */
+    background-position: center;
+    /* Center the background image */
+    filter: blur(10px);
+    /* Apply blur filter */
+    z-index: -1;
+    /* Ensure it's behind other content */
+}
+
+.container {
+
+    /* Set position to relative */
+    padding: 20px;
+    color: white;
+    /* Set text color to white */
+    text-align: center;
+}
+
+.hero-creation {
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label,
+input,
+button {
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+.title {
+    font-size: 500%;
+    top: 10px;
+}
+
+/* Add this style for the phone booth image */
+.phoneBooth {
+    width: 150px;
+    /* Adjust the size as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    position: absolute;
+    /* Fixed position */
+    bottom: 3%;
+    /* Distance from the bottom */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Center horizontally */
+    cursor: pointer;
+    z-index: 1;
+
+
+
+    /* Smooth transition for filter and opacity */
+}
+
+.Facility {
+    width: 450px;
+    /* Adjust the size as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    position: absolute;
+    /* Fixed position */
+    bottom: 0%;
+    /* Distance from the bottom */
+    left: 20%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Center horizontally */
+}
+
+.Forge {
+    width: 400px;
+    /* Adjust the size as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    position: absolute;
+    /* Fixed position */
+    bottom: 0;
+    /* Distance from the bottom */
+    left: 80%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Center horizontally */
+}
+
+
+.darken {
+    filter: brightness(0.8);
+    /* Adjust the brightness to darken the image */
+}
+
+/* ... your existing CSS ... */
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 2;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #898989;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+    display: flex;
+    position: relative;
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    /* Position the close button absolutely within the .modal-content */
+    top: 10px;
+    /* Distance from the top of the .modal-content */
+    right: 10px;
+    /* Distance from the right of the .modal-content */
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Left and Right sections */
+.modal-left,
+.modal-right {
+    width: 50%;
+}
+
+/* Modal Body styling */
+.modal-body {
+    display: flex;
+    /* Use flexbox to layout children side by side */
+    align-items: center;
+    /* Align children vertically in the center */
+    justify-content: center;
+    /* Center children horizontally */
+}
+
+/* Modal Left and Right sections with flex layout */
+.modal-left,
+.modal-right {
+    flex: 1;
+    /* Both children should take up equal space */
+    display: flex;
+    /* Use flexbox for further layout */
+    align-items: center;
+    /* Align children vertically in the center */
+    justify-content: center;
+    /* Center children horizontally */
+}
+
+
+.modal-right {
+    /* Additional styling for the right side if needed */
+    text-align: left;
+    /* Align the text to the left */
+    padding-left: 20px;
+    /* Add some spacing between the image and the text */
+}
+
+.Gold {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+}
+
+.Cave {
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    width: 100px;
+}
+
+
+
+#currency-display {
+    position: absolute;
+    top: 40px;
+    left: 125px;
+}
+
+#facility-level {
+    position: absolute;
+    top: 120px;
+    left: 125px;
+}
+
+.shop {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.shop-item {
+    margin-bottom: 20px;
+}
+
+.buy-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.buy-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.Facility,
+.Forge {
+    display: none;
+    margin: 0;
+    padding: 0px;
+    /* Initially hide the Facility and Forge */
+    /* Other styles... */
+}
+
+
+
+
+/* Add styles for the shop modal similar to the hero modal */
+#shopModal {
+    display: none;
+    /* Other styles similar to #heroModal */
+}
+
+/* Add styles for the shop and shop items */
+.shop {
+    text-align: center;
+}
+
+.shop-item {
+    margin-bottom: 20px;
+}
+
+@keyframes walking {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#silhouette {
+    position: absolute;
+    bottom: 50px;
+    /* Adjust as needed to position on the ground */
+    animation: walking 0.5s infinite;
+    width: 225px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.hero-level {
+    position: absolute;
+    bottom: 300px;
+    /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    cursor: pointer;
+}
+
+#hero-level {
+    font-size: 50px;
+    /* Semi-transparent background */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.scroll-icon img {
+    width: 150px;
+    /* Adjust the size as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    /* Ensure the image is displayed as a block-level element */
+    top: 0px;
+    right: 0px;
+    position: absolute;
+    cursor: pointer;
+}
+
+#hero-display {
+    width: 150px;
+    /* Adjust the size as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    /* Ensure the image is displayed as a block-level element */
+    top: 150px;
+    right: 0px;
+    position: absolute;
+}
+
+#weapon-display {
+    width: 150px;
+    /* Adjust the size as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    /* Ensure the image is displayed as a block-level element */
+    top: 300px;
+    right: 0px;
+    position: absolute;
+}
+
+.loading {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.loading div {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    animation: loading 1.2s linear infinite;
+}
+
+.loading div:nth-child(1) {
+    top: 8px;
+    left: 8px;
+    animation-delay: 0s;
+}
+
+.loading div:nth-child(2) {
+    top: 8px;
+    left: 32px;
+    animation-delay: -0.4s;
+}
+
+.loading div:nth-child(3) {
+    top: 8px;
+    left: 56px;
+    animation-delay: -0.8s;
+}
+
+.loading div:nth-child(4) {
+    top: 32px;
+    left: 8px;
+    animation-delay: -0.4s;
+}
+
+.loading div:nth-child(5) {
+    top: 32px;
+    left: 32px;
+    animation-delay: -0.8s;
+}
+
+.loading div:nth-child(6) {
+    top: 32px;
+    left: 56px;
+    animation-delay: -1.2s;
+}
+
+.loading div:nth-child(7) {
+    top: 56px;
+    left: 8px;
+    animation-delay: -0.8s;
+}
+
+.loading div:nth-child(8) {
+    top: 56px;
+    left: 32px;
+    animation-delay: -1.2s;
+}
+
+.loading div:nth-child(9) {
+    top: 56px;
+    left: 56px;
+    animation-delay: -1.6s;
+}
+
+@keyframes loading {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}

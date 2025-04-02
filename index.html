@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixel Character Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Pixel Character Generator</h1>
+        <p class="description">
+          Describe your character and we'll generate a pixel art version
+        </p>
+      </header>
+
+      <section class="generator-panel">
+        <div class="input-section">
+          <div class="input-group">
+            <label for="character-description">Character Description</label>
+            <textarea
+              id="character-description"
+              placeholder="Describe your character (e.g., A knight with huge sword and dragon-scale armor)"
+              rows="5"
+            ></textarea>
+          </div>
+
+          <button id="generate-btn">Generate Character</button>
+        </div>
+
+        <div class="result-section">
+          <div id="character-display">
+            <div class="placeholder">
+              <div class="pixel-icon"></div>
+              <p>Your character will appear here</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>Powered by AI • Create unique pixel art characters instantly</p>
+      </footer>
+    </main>
+
+    <script src="Frontend/app.js"></script>
+  </body>
+</html>

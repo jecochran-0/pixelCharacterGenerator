@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Clicker Game</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="blur-background"></div> <!-- Apply blur only to the background -->
+    <div class="container">
+        <h1 class="title">Clicker Quest</h1>
+        <div class="hero-creation">
+            <h2 style="font-size: 40px;">Create Your Hero</h2>
+            <form id="hero-form">
+                <div class="mb-3">
+                    <label for="word-one" class="form-label">First Word:</label>
+                    <input type="text" class="form-control" id="word-one" name="word-one" required>
+                </div>
+                <div class="mb-3">
+                    <label for="word-two" class="form-label">Second Word:</label>
+                    <input type="text" class="form-control" id="word-two" name="word-two" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Generate Hero</button>
+            </form>
+        </div>
+
+        <div class="hero-level">
+            <h2>Hero Level</h2>
+            <p id="hero-level">1</p>
+        </div>
+
+    </div>
+
+
+    <!-- Shadow Figure-->
+    <img src="Silhouette.png" alt="Silhouette" id="silhouette" style="display: none;">
+
+    <div class="stats">
+        <div class="gameplay">
+            <div class="currency">
+                <img class="Gold" src="Gold.png" alt="Gold Image">
+                <p id="currency-display">0</p>
+            </div>
+            <img src="" alt="HeroDisplay" id="hero-display">
+            <img src="IceSword.webp" alt="WeaponDisplay" id="weapon-display">
+            <!-- Ensure that the ID matches the one used in JavaScript -->
+            <img class="phoneBooth" src="phoneBooth.png" alt="Phone Booth">
+            <img class="Facility" src="Cave.png" alt="The Facility">
+            <img class="Forge" src="Forge.png" alt="The Forge">
+
+            <!-- Scroll Icon -->
+            <div class="scroll-icon">
+                <img src="scroll.png" alt="Open Shop">
+            </div>
+
+        </div>
+        <div class="upgrades">
+            <img class="Cave" src="Cave.png" alt="">
+            <p id="facility-level">1</p>
+
+            <!-- Add more upgrade buttons here -->
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- The Modal -->
+    <div id="heroModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-left">
+                    <div class="loading">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <!-- Hero image will be inserted here -->
+                    <img id="hero-image" src="" alt="Hero Image" style="width:100%;">
+                </div>
+                <div class="modal-right">
+                    <!-- Hero backstory will be inserted here -->
+                    <p id="hero-backstory"></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- Shop Modal -->
+    <div id="shopModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="shop">
+                <h2>Shop</h2>
+                <div class="shop-item">
+                    <img src="Cave.png" alt="Facility">
+                    <button id="buy-facility" class="buy-btn">Buy Facility</button>
+                    <p>Cost: <span id="facility-cost">100</span> Gold</p>
+                </div>
+                <div class="shop-item">
+                    <img src="Forge.png" alt="Forge">
+                    <button id="buy-forge" class="buy-btn">Buy Forge</button>
+                    <p>Cost: <span id="forge-cost">200</span> Gold</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ... the rest of your HTML ... -->
+
+    <script src="app.js"></script>
+</body>
+
+</html>

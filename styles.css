@@ -1,0 +1,309 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  background-color: #282c34;
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #333842;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  padding: 30px;
+}
+
+/* Header styles */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #454b58;
+}
+
+h1 {
+  font-family: "Press Start 2P", cursive;
+  color: #5de2ff;
+  margin-bottom: 15px;
+  font-size: 28px;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+.description {
+  color: #b8c0cf;
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Generator Panel */
+.generator-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .generator-panel {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .input-section,
+  .result-section {
+    flex: 1;
+  }
+}
+
+/* Input section */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #3a404c;
+  border-radius: 8px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-weight: bold;
+  color: #8de8ff;
+  font-size: 14px;
+}
+
+input {
+  padding: 14px;
+  background-color: #282c34;
+  border: 2px solid #5de2ff;
+  border-radius: 8px;
+  color: #f0f0f0;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #5db9ff;
+  box-shadow: 0 0 0 2px rgba(93, 226, 255, 0.3);
+}
+
+input::placeholder {
+  color: #666e80;
+}
+
+#generate-btn {
+  margin-top: 15px;
+  padding: 16px;
+  background-color: #5de2ff;
+  color: #282c34;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "Press Start 2P", cursive;
+  font-size: 14px;
+}
+
+#generate-btn:hover {
+  background-color: #4cc6e0;
+  transform: translateY(-2px);
+}
+
+#generate-btn:active {
+  transform: translateY(1px);
+}
+
+#generate-btn:disabled {
+  background-color: #555;
+  color: #aaa;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Result section */
+.result-section {
+  padding: 20px;
+  background-color: #3a404c;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+}
+
+#character-display {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 15px;
+  border: 2px dashed #454b58;
+  border-radius: 8px;
+  padding: 20px;
+  min-height: 300px;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: #8b93a5;
+}
+
+.pixel-icon {
+  width: 80px;
+  height: 80px;
+  background-image: linear-gradient(45deg, #5de2ff 25%, transparent 25%),
+    linear-gradient(-45deg, #5de2ff 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #5de2ff 75%),
+    linear-gradient(-45deg, transparent 75%, #5de2ff 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  border-radius: 8px;
+  opacity: 0.5;
+}
+
+.character-result {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.character-result img {
+  max-width: 100%;
+  max-height: 350px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.character-result p {
+  color: #b8c0cf;
+  font-size: 14px;
+  max-width: 300px;
+}
+
+/* Loading and error states */
+.loading,
+.error {
+  color: #b8c0cf;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.loading::after {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 3px solid #5de2ff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  color: #ff6b6b;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #8b93a5;
+  font-size: 14px;
+}
+
+/* Download button styling */
+.download-btn {
+  margin-top: 15px;
+  padding: 12px 20px;
+  background-color: #ff9f43;
+  color: #282c34;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.download-btn:hover {
+  background-color: #f39030;
+  transform: translateY(-2px);
+}
+
+.download-btn:active {
+  transform: translateY(1px);
+}
+
+.download-btn::before {
+  content: "↓";
+  font-weight: bold;
+}
+
+/* Add this to your existing styles.css file */
+
+textarea {
+  padding: 14px;
+  background-color: #282c34;
+  border: 2px solid #5de2ff;
+  border-radius: 8px;
+  color: #f0f0f0;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  resize: vertical;
+  min-height: 120px;
+  font-family: "Roboto", sans-serif;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #5db9ff;
+  box-shadow: 0 0 0 2px rgba(93, 226, 255, 0.3);
+}
+
+textarea::placeholder {
+  color: #666e80;
+}
